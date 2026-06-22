@@ -1,0 +1,60 @@
+# Temperature Conversion Program
+# Prodigy InfoTech - Software Development Internship
+
+def celsius_to_fahrenheit(c):
+    return (c * 9/5) + 32
+
+def celsius_to_kelvin(c):
+    return c + 273.15
+
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5/9
+
+def fahrenheit_to_kelvin(f):
+    c = fahrenheit_to_celsius(f)
+    return c + 273.15
+
+def kelvin_to_celsius(k):
+    return k - 273.15
+
+def kelvin_to_fahrenheit(k):
+    c = kelvin_to_celsius(k)
+    return (c * 9/5) + 32
+
+print("===================================")
+print("    TEMPERATURE CONVERTER")
+print("===================================")
+
+temperature = float(input("Enter temperature value: "))
+unit = input("Enter unit (C/F/K): ").upper()
+
+if unit == "C":
+    fahrenheit = celsius_to_fahrenheit(temperature)
+    kelvin = celsius_to_kelvin(temperature)
+
+    print("\nConverted Temperatures:")
+    print(f"Celsius    : {temperature:.2f} °C")
+    print(f"Fahrenheit : {fahrenheit:.2f} °F")
+    print(f"Kelvin     : {kelvin:.2f} K")
+
+elif unit == "F":
+    celsius = fahrenheit_to_celsius(temperature)
+    kelvin = fahrenheit_to_kelvin(temperature)
+
+    print("\nConverted Temperatures:")
+    print(f"Fahrenheit : {temperature:.2f} °F")
+    print(f"Celsius    : {celsius:.2f} °C")
+    print(f"Kelvin     : {kelvin:.2f} K")
+
+elif unit == "K":
+    celsius = kelvin_to_celsius(temperature)
+    fahrenheit = kelvin_to_fahrenheit(temperature)
+
+    print("\nConverted Temperatures:")
+    print(f"Kelvin     : {temperature:.2f} K")
+    print(f"Celsius    : {celsius:.2f} °C")
+    print(f"Fahrenheit : {fahrenheit:.2f} °F")
+
+else:
+    print("\nInvalid Unit!")
+    print("Please enter C for Celsius, F for Fahrenheit, or K for Kelvin.")
